@@ -9,31 +9,31 @@
 # Basic Site Settings
 locale: "en-US"
 site_theme: "default"
-title: "timhal.github.io"
+title: "Tim Hallyburton"
 title_separator: "-"
 name: &name "Tim Hallyburton"
-description: &description "PhD Candidate"
+description: &description "Doctoral researcher in machine learning and document analysis at TU Dortmund University."
 url: https://timhal.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
 baseurl: "" # the subpath of your site, e.g. "/blog"
-repository: "academicpages/academicpages.github.io"
+repository: "TimHal/TimHal.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
 #               Additional customization can be done by editing /_includes/author-profile.html
-author:
+author: 
   # Biographic information
   avatar: "profile.png"
   name: "Tim Hallyburton"
   pronouns: # example: "she/her"
-  bio: "Computer Scientist, PhD Student"
-  location: "Germany"
+  bio: "Doctoral researcher in machine learning, document analysis and representation learning."
+  location: "Dortmund, Germany"
   employer: "TU Dortmund University, Otto-Hahn-Str. 16 / Room 109"
   uri: # URL
   email: "tim.hallyburton@cs.tu-dortmund.de"
 
   # Academic websites
   arxiv: # URL - Update with the correct link to your profile
-  googlescholar: "https://scholar.google.com/citations?user=a0WwJ9gAAAAJ"
+  googlescholar: "https://scholar.google.com/citations?user=a0WwJ9gAAAAJ&hl=en"
   impactstory: # URL
   orcid: "https://orcid.org/0009-0008-0944-9193"
   semantic: # URL
@@ -45,12 +45,12 @@ author:
   bitbucket: # Username - Update with your username on the site
   codepen: # Username
   dribbble: # Username
-  github: "TimHal"# "academicpages"
+  github: "TimHal"
   kaggle: # Username
   stackoverflow: # User number or user number and name (i.e., use "1" or "1/jeff-atwood")
 
   # Social media
-  bluesky: #"bsky.app" # Replace this with you Bluesky username
+  bluesky: # Replace this with you Bluesky username
   facebook: # Username
   flickr: # Username
   foursquare: # Username
@@ -90,7 +90,6 @@ breadcrumbs: false # true, false (default)
 words_per_minute: 160
 future: true
 read_more: "disabled" # if enabled, adds "Read more" links to excerpts
-talkmap_link: false #change to true to add link to talkmap on talks page
 comments:
   provider: # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
   disqus:
@@ -212,26 +211,9 @@ collections:
   publications:
     output: true
     permalink: /:collection/:path/
-  portfolio:
-    output: true
-    permalink: /:collection/:path/
-  talks:
-    output: true
-    permalink: /:collection/:path/
 
 # These settings control how pages and collections are included in the site
 defaults:
-  # _posts
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
   # _pages
   - scope:
       path: ""
@@ -246,8 +228,8 @@ defaults:
     values:
       layout: single
       author_profile: true
-      share: true
-      comments: true
+      share: false
+      comments: false
   # _publications
   - scope:
       path: ""
@@ -255,25 +237,8 @@ defaults:
     values:
       layout: single
       author_profile: true
-      share: true
-      comments: true
-  # _portfolio
-  - scope:
-      path: ""
-      type: portfolio
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comment: true
-  # _talks
-  - scope:
-      path: ""
-      type: talks
-    values:
-      layout: talk
-      author_profile: true
-      share: true
+      share: false
+      comments: false
 
 # Sass/SCSS
 sass:
