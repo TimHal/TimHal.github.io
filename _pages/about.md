@@ -1,49 +1,69 @@
 ---
 permalink: /
-title: "Academic Pages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "Tim Hallyburton"
+excerpt: "Doctoral researcher in machine learning and document analysis at TU Dortmund University."
 author_profile: true
-redirect_from: 
+redirect_from:
   - /about/
   - /about.html
 ---
 
-This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the repository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this template](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads!
+<p class="lead">I am a doctoral researcher in the <a href="https://patrec.cs.tu-dortmund.de/">Pattern Recognition in Embedded Systems</a> group at TU Dortmund University, advised by Prof. Dr.-Ing. Gernot A. Fink. I build recognition systems that work with minimal supervision in scarce label settings, such as historical archives, rare alphabets and scripts that only a handful of people can still read (for instance: my own handwriting from last week).</p>
 
-A data-driven personal website
-======
-Like many other Jekyll-based GitHub Pages templates, Academic Pages makes you separate the website's content from its form. The content & metadata of your website are in structured markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
+Most machine learning assumes data comes labelled. The collections I care about do not: an expert
+can annotate a few characters per class, not a few thousand. My work asks how far that handful of
+examples can be stretched through prototype-anchored learning, self-supervised representations,
+and models that combine what a page looks like with how its strokes are structured.
 
-Many of the features of dynamic content management systems (like Wordpress) can be achieved in this fashion, using a fraction of the computational resources and with far less vulnerability to hacking and DDoSing. You can also modify the theme to your heart's content without touching the content of your site. If you get to a point where you've broken something in Jekyll/HTML/CSS beyond repair, your markdown files describing your talks, publications, etc. are safe. You can rollback the changes or even delete the repository and start over - just be sure to save the markdown files! Finally, you can also write scripts that process the structured data on the site, such as [this one](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb) that analyzes metadata in pages about talks to display [a map of every location you've given a talk](https://academicpages.github.io/talkmap.html).
+Before the PhD I spent five years building production software, most recently as a backend and
+database architect at [MotionMiners](https://www.motionminers.com/), and earlier at
+[CERN](https://home.cern/) on grid computing for the ALICE experiment. That background shapes how I
+work: I like research that runs, scales, and ends up in someone's hands.
 
-Getting started
-======
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Fork [this template](https://github.com/academicpages/academicpages.github.io) by clicking the "Use this template" button in the top right. 
-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](http://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
+<div class="notice--info" markdown="1">
+**Open to a research internship.** I am looking for a 3–6 month research internship starting in
+January 2027, with flexibility for a May–July 2027 start. Expected PhD completion: December 2027.
+[Get in touch](mailto:tim.hallyburton@cs.tu-dortmund.de) — I am always glad to hear about
+interesting problems.
+</div>
 
-Site-wide configuration
-------
-The main configuration file for the site is in the base directory in [_config.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_config.yml), which defines the content in the sidebars and other site-wide features. You will need to replace the default variables with ones about yourself and your site's github repository. The configuration file for the top menu is in [_data/navigation.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_data/navigation.yml). For example, if you don't have a portfolio or blog posts, you can remove those items from that navigation.yml file to remove them from the header. 
+## What I work on
 
-Create content & metadata
-------
-For site content, there is one markdown file for each type of content, which are stored in directories like _publications, _talks, _posts, _teaching, or _pages. For example, each talk is a markdown file in the [_talks directory](https://github.com/academicpages/academicpages.github.io/tree/master/_talks). At the top of each markdown file is structured data in YAML about the talk, which the theme will parse to do lots of cool stuff. The same structured data about a talk is used to generate the list of talks on the [Talks page](https://academicpages.github.io/talks), each [individual page](https://academicpages.github.io/talks/2012-03-01-talk-1) for specific talks, the talks section for the [CV page](https://academicpages.github.io/cv), and the [map of places you've given a talk](https://academicpages.github.io/talkmap.html) (if you run this [python file](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.py) or [Jupyter notebook](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb), which creates the HTML for the map based on the contents of the _talks directory).
+<div class="card-grid" markdown="0">
+  <div class="card">
+    <h3>Label-efficient learning</h3>
+    <p>Prototype-guided and few-shot classification, deep clustering, pseudo-label expansion and open-set recognition — getting from a handful of exemplars to a usable model.</p>
+  </div>
+  <div class="card">
+    <h3>Representation learning</h3>
+    <p>Masked autoencoders, contrastive objectives and domain-specific handwriting encoders that learn from unlabelled pages.</p>
+  </div>
+  <div class="card">
+    <h3>Geometric deep learning</h3>
+    <p>Graph neural networks and hybrid image–graph architectures, combining visual appearance with the structure of a written trace.</p>
+  </div>
+  <div class="card">
+    <h3>Document analysis</h3>
+    <p>Handwriting and character recognition, writer retrieval and archival information extraction — especially in low-resource settings and rare alphabets.</p>
+  </div>
+</div>
 
-**Markdown generator**
+## Selected highlights
 
-The repository includes [a set of Jupyter notebooks](https://github.com/academicpages/academicpages.github.io/tree/master/markdown_generator
-) that converts a CSV containing structured data about talks or presentations into individual markdown files that will be properly formatted for the Academic Pages template. The sample CSVs in that directory are the ones I used to create my own personal website at stuartgeiger.com. My usual workflow is that I keep a spreadsheet of my publications and talks, then run the code in these notebooks to generate the markdown files, then commit and push them to the GitHub repository.
+- **Best Paper Award** at the HIP workshop, ICDAR 2026, for [PAUL](/publication/2026-paul-reconstruction-error-ratios), which turns one to five expert-chosen exemplars per class into a full pseudo-labelled training set.
+- **Doctoral Consortium Award**, ICDAR 2026, Vienna.
+- Showed that [feeding whole pages to vision-language models](/publication/2025-segmentation-free-hwr-lvlm) beats line segmentation for historical handwriting recognition — cutting Gemini 2.5 Pro's character error rate on Cyrillic from 22.6% to 3.9%, at lower cost.
+- Co-authored **X-VLAD**, the aggregation module behind [writer retrieval at scale](/publication/2026-writer-retrieval-at-scale): 78.8% mAP on HisFragIR20, +21.6% over prior published work.
+- Scholar of the **German Academic Scholarship Foundation** (Studienstiftung des deutschen Volkes).
 
-How to edit your site's GitHub repository
-------
-Many people use a git client to create files on their local computer and then push them to GitHub's servers. If you are not familiar with git, you can directly edit these configuration and markdown files directly in the github.com interface. Navigate to a file (like [this one](https://github.com/academicpages/academicpages.github.io/blob/master/_talks/2012-03-01-talk-1.md) and click the pencil icon in the top right of the content preview (to the right of the "Raw | Blame | History" buttons). You can delete a file by clicking the trashcan icon to the right of the pencil icon. You can also create new files or upload files by navigating to a directory and clicking the "Create new file" or "Upload files" buttons. 
+[Read more about my research](/research/){: .btn .btn--primary} [See all publications](/publications/){: .btn} [Full CV](/cv/){: .btn}
 
-Example: editing a markdown file for a talk
-![Editing a markdown file for a talk](/images/editing-talk.png)
+## Recent news
 
-For more info
-------
-More info about configuring Academic Pages can be found in [the guide](https://academicpages.github.io/markdown/), the [growing wiki](https://github.com/academicpages/academicpages.github.io/wiki), and you can always [ask a question on GitHub](https://github.com/academicpages/academicpages.github.io/discussions). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful.
+<ul class="news-list">
+  <li><span class="news-date">Sep 2026</span><span class="news-text">Best Paper Award at the HIP workshop and a Doctoral Consortium Award at ICDAR 2026 in Vienna; two further ICDAR papers presented.</span></li>
+  <li><span class="news-date">Aug 2026</span><span class="news-text">Presented <em>Talking as a Drug</em> at the ETHICAIA workshop, IJCAI 2026 in Bremen.</span></li>
+  <li><span class="news-date">Jun 2026</span><span class="news-text">Journal manuscript on segmentation and vision-language models submitted to <em>Informatica</em>.</span></li>
+  <li><span class="news-date">2026</span><span class="news-text">Attended the Summer School on Document Analysis (SSDA) in Vall de Núria.</span></li>
+  <li><span class="news-date">2025</span><span class="news-text">Best Presentation Award and Best Student Paper runner-up at the International Semantic Web Research Summer School (ISWS), Bertinoro.</span></li>
+</ul>
