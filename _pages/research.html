@@ -1,0 +1,101 @@
+---
+layout: archive
+title: "Research"
+permalink: /research/
+author_profile: true
+---
+
+<p class="lead">My dissertation combines visual and graph-based representations for character and
+  handwriting recognition in low-resource settings. A scenario where an expert can label a handful of
+  examples per class, and everything else has to be earned from unlabelled data.</p>
+
+<p>The work is funded by the DFG–SNSF project <em>“Combining Image and Graph-based Neural Networks
+    for Handwriting Recognition”</em> (DFG 528122871 / SNSF 217594), a collaboration between the
+  Pattern Recognition in Embedded Systems group at TU Dortmund University and the
+  <a href="https://www.unifr.ch/inf/de/aibex.html">AIBEX group</a> at the University of Fribourg.
+</p>
+
+<h2>Current threads</h2>
+
+<div class="research-thread">
+  <h3>Prototype-anchored learning from a handful of exemplars</h3>
+  <p>PAUL trains one autoencoder per class, anchored on one to five expert-selected exemplars, and
+    expands pseudo-labels over an unlabelled pool. The selection criterion is the ratio between the
+    best and the second-best reconstruction error — a sample is claimed only when one class model
+    explains it decisively better than the rest. On EMNIST Balanced this reaches 66.9% accuracy
+    against 53.3% for the strongest baseline, and it holds up on KMNIST and two Omniglot-derived
+    benchmarks against SCAN, DEC, IDEC, JULE and centroid/GMM baselines across DINO, CLIP and
+    convolutional features.</p>
+  <p class="thread-links">
+    <a href="/publication/2026-paul-reconstruction-error-ratios">Paper (Best Paper, HIP@ICDAR 2026)</a>
+    · <a href="https://github.com/TimHal/icdar2026-hip-paul">Code</a>
+  </p>
+</div>
+
+<div class="research-thread">
+  <h3>Vision-language models as document readers</h3>
+  <p>Recognition pipelines have segmented pages into lines for decades. Benchmarking nine commercial
+    and open-weight LVLMs across four scripts and three difficulty levels shows that assumption is
+    worth revisiting: page-level input beat line segmentation on every handwritten script we tested,
+    and cost less to run. For Cyrillic, character error rate dropped from 22.6% to 3.9%. The
+    exception is heavily degraded material such as the Bentham collection, where segmentation still
+    earns its place.</p>
+  <p class="thread-links">
+    <a href="/publication/2025-segmentation-free-hwr-lvlm">SOICT 2025 paper</a>
+    · <a href="/publication/2026-hwr-lvlm-impact-of-segmentation">Journal extension (under review)</a>
+  </p>
+</div>
+
+<div class="research-thread">
+  <h3>Writer retrieval at archival scale</h3>
+  <p>FormWR is a 387,000-page benchmark for writer retrieval where handwriting appears only sparsely
+    on printed forms; closer to what archives actually hold than page-length manuscripts. I
+    contributed X-VLAD, a learned set-aggregation module that compresses a variable set of local
+    descriptors into a 256-dimensional writer embedding. Transferred to HisFragIR20, it reaches
+    78.8% mAP and 97.9% Top-1, improving on prior published work by +21.6% mAP and +12.7% Top-1.</p>
+  <p class="thread-links"><a href="/publication/2026-writer-retrieval-at-scale">ICDAR 2026 paper</a></p>
+</div>
+
+<div class="research-thread">
+  <h3>Information extraction from historical archives</h3>
+  <p>Recognition is rarely the end goal — archives want structured, searchable records. This thread
+    covers layout analysis, entity extraction and record linkage on historical archival material, in
+    interdisciplinary work with historians.</p>
+  <p class="thread-links"><a href="/publication/2026-information-extraction-archival-records">ICDAR 2026 paper</a></p>
+</div>
+
+<div class="research-thread">
+  <h3>Side interests</h3>
+  <p>Privacy-preserving representations of wearable sensor data (my M.Sc. work, published at ICPR),
+    knowledge graphs for reliable AI, and the ethics of LLM-based companionship in elder care.
+    Joint work with researchers outside computer science.</p>
+</div>
+
+<h2>Methods and interests</h2>
+
+<ul class="tag-cloud">
+  <li>Self-supervised learning</li>
+  <li>Masked autoencoders</li>
+  <li>Contrastive objectives</li>
+  <li>Graph neural networks</li>
+  <li>Hybrid image–graph architectures</li>
+  <li>Autoencoders, VAEs and β-VAEs</li>
+  <li>GANs</li>
+  <li>Vision-language models</li>
+  <li>Few-shot classification</li>
+  <li>Deep clustering</li>
+  <li>Open-set recognition</li>
+  <li>Handwriting and character recognition</li>
+  <li>Writer retrieval</li>
+  <li>Knowledge representation</li>
+</ul>
+
+<h2>Collaborations</h2>
+
+<p>Ongoing work with Andreas Fischer, Anna Scius-Bertrand and Antônio F. S. Neto
+  (University of Fribourg) on the DFG–SNSF handwriting recognition project, and interdisciplinary
+  collaboration on the ethics of language-model companionship in elder care.</p>
+
+<p>I co-supervise seven Bachelor's and Master's theses in these areas — see
+  <a href="/teaching/">teaching and supervision</a>.
+</p>
