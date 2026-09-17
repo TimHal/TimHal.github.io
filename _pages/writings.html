@@ -1,0 +1,87 @@
+---
+layout: archive
+title: "Writings"
+permalink: /writings/
+author_profile: true
+---
+
+{% include base_path %}
+
+<p class="lead">Notes I write to get things out of my head: technical findings worth keeping,
+things I had to work out the hard way, and the occasional entry about academic life.</p>
+
+{% assign posts = site.posts %}
+
+{% if posts.size > 0 %}
+  {% assign technical_count = site.posts | where: "kind", "technical" | size %}
+  {% assign personal_count = site.posts | where: "kind", "personal" | size %}
+
+  {% if technical_count > 0 and personal_count > 0 %}
+    <div class="writing-filter" data-writing-filter>
+      <button type="button" class="writing-filter__btn is-active" data-filter="all">All</button>
+      <button type="button" class="writing-filter__btn" data-filter="technical">Technical</button>
+      <button type="button" class="writing-filter__btn" data-filter="personal">Personal</button>
+    </div>
+  {% endif %}
+
+  {% assign posts_by_year = posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+  {% for year in posts_by_year %}
+    <section class="writing-year" data-writing-year>
+      <h2 class="writing-year__heading">{{ year.name }}</h2>
+      <ul class="writing-list">
+        {% for post in year.items %}
+          <li class="writing-item" data-kind="{{ post.kind | default: 'technical' }}">
+            <p class="writing-item__meta">
+              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %B %Y" }}</time>
+              {% if post.kind %}<span class="badge badge--kind">{{ post.kind }}</span>{% endif %}
+              {% if post.read_time %}<span class="writing-item__time">{% include read-time.html %}</span>{% endif %}
+            </p>
+            <h3 class="writing-item__title"><a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a></h3>
+            {% if post.excerpt %}
+              <div class="writing-item__excerpt">{{ post.excerpt | markdownify }}</div>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endfor %}
+
+  <p class="writing-empty" data-writing-empty hidden>Nothing in this category yet.</p>
+{% else %}
+  <p>No entries yet — the first one is on its way.</p>
+{% endif %}
+
+<script>
+  (function () {
+    var bar = document.querySelector('[data-writing-filter]');
+    if (!bar) return;
+
+    var items = Array.prototype.slice.call(document.querySelectorAll('.writing-item'));
+    var years = Array.prototype.slice.call(document.querySelectorAll('[data-writing-year]'));
+    var empty = document.querySelector('[data-writing-empty]');
+
+    bar.addEventListener('click', function (event) {
+      var button = event.target.closest('.writing-filter__btn');
+      if (!button) return;
+
+      var filter = button.dataset.filter;
+
+      bar.querySelectorAll('.writing-filter__btn').forEach(function (b) {
+        b.classList.toggle('is-active', b === button);
+      });
+
+      items.forEach(function (item) {
+        item.hidden = filter !== 'all' && item.dataset.kind !== filter;
+      });
+
+      var shown = 0;
+      years.forEach(function (year) {
+        var visible = year.querySelectorAll('.writing-item:not([hidden])').length;
+        year.hidden = visible === 0;
+        shown += visible;
+      });
+
+      if (empty) empty.hidden = shown !== 0;
+    });
+  })();
+</script>

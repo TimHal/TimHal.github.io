@@ -409,6 +409,13 @@ p.lead {
     color: var(--ink-faint);
     border: 1px solid var(--rule);
   }
+
+  &--kind {
+    background: var(--accent-soft);
+    color: var(--accent);
+    border: 1px solid var(--rule);
+    font-size: 0.68rem;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -517,6 +524,119 @@ p.lead {
     background: var(--paper-alt);
     color: var(--ink-soft);
   }
+}
+
+/* --------------------------------------------------------------------------
+   Writings
+   -------------------------------------------------------------------------- */
+
+.writing-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 1.5em 0 0.5em;
+}
+
+.writing-filter__btn {
+  font-family: var(--font-sans);
+  font-size: 0.82em;
+  font-weight: 500;
+  color: var(--ink-soft);
+  background: var(--paper-alt);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 0.35em 0.95em;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+
+  &:hover {
+    border-color: var(--accent-bright);
+    color: var(--accent);
+  }
+
+  &.is-active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .writing-filter__btn.is-active { color: #10141a; }
+}
+
+.writing-year {
+  margin-top: 2.2em;
+
+  &__heading {
+    font-size: 0.78em !important;
+    font-family: var(--font-sans) !important;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 0.2em !important;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid var(--rule);
+  }
+}
+
+.writing-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.writing-item {
+  padding: 1.3em 0;
+  border-bottom: 1px solid var(--rule);
+
+  &:last-child { border-bottom: 0; }
+
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 0.8rem;
+    font-size: 0.8em;
+    color: var(--ink-faint);
+    margin: 0 0 0.35em;
+  }
+
+  &__time { color: var(--ink-faint); }
+
+  &__title {
+    margin: 0 0 0.4em !important;
+    font-size: 1.2em !important;
+
+    a {
+      color: var(--ink);
+      text-decoration: none;
+
+      &:hover { color: var(--accent-bright); }
+    }
+  }
+
+  &__excerpt {
+    font-size: 0.95em;
+    line-height: 1.6;
+    color: var(--ink-soft);
+
+    p { margin: 0; }
+  }
+}
+
+.post__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.8rem;
+}
+
+.writing-empty {
+  color: var(--ink-faint) !important;
+  font-size: 0.95em !important;
+  margin-top: 1.5em;
 }
 
 /* --------------------------------------------------------------------------
