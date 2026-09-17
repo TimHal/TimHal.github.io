@@ -1,21 +1,23 @@
-# Base image: Ruby with necessary dependencies for Jekyll
+# Base image: Ruby with the dependencies Jekyll needs
 FROM ruby:3.2
 
-# Install dependencies
 RUN apt-get update && apt-get install -y \
     build-essential \
     nodejs \
     && rm -rf /var/lib/apt/lists/*
 
-# Set the working directory inside the container
 WORKDIR /usr/src/app
 
-# Copy Gemfile into the container (necessary for `bundle install`)
+# Gems live outside the mounted source tree so the host cannot shadow them.
+ENV BUNDLE_PATH=/usr/local/bundle
+
+# Only the Gemfile is copied: the lockfile is generated inside the container,
+# so a host-side lockfile can never disagree with the installed gems.
 COPY Gemfile ./
 
-# Install bundler and dependencies
-RUN gem install bundler:2.3.26 && bundle install
+RUN gem install bundler:2.4.19 \
+    && bundle install \
+    && chown -R 1000:1000 /usr/local/bundle
 
-# Command to serve the Jekyll site
-CMD ["jekyll", "serve", "-H", "0.0.0.0", "-w", "--config", "_config.yml,_config_docker.yml"]
-
+# Reconcile gems with the mounted Gemfile before serving, then serve.
+CMD ["bash", "-c", "bundle install && exec bundle exec jekyll serve -H 0.0.0.0 -w --config _config.yml,_config_docker.yml"]
